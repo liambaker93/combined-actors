@@ -1,7 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Shows
 # Create your views here.
 
 
 def shows(request):
-    return render(request, 'shows/shows.html')
+    shows = Shows.objects.all()
+
+    context = {
+        'shows': shows,
+    }
+
+    template = 'shows/shows.html'
+
+    return render(request, template, context)
+    

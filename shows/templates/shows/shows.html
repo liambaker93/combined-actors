@@ -1,4 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>These are the shows</h2>
+{% for show in shows %}
+<div class="card" style="width: 18rem;">
+<!--<img src="..." class="card-img-top" alt="...">-->
+  <div class="card-body">
+    <h5 class="card-title">{{ show.name }}</h5>
+    <p class="card-text">{{ show.description }}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+{% endfor %}
 {% endblock %}
