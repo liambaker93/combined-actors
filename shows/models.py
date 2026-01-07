@@ -22,6 +22,8 @@ class Shows(models.Model):
     description = models.TextField(blank=True, null=True)
     on_sale = models.BooleanField(default=False, blank=True)
     in_future = models.BooleanField(default=False, blank=True)
+    image = models.ImageField(default=None, null=True, blank=True)
+    tag_line = models.CharField(max_length=128, blank=True, null=True)
 
     def timeCheck(self):
         """

@@ -11,6 +11,7 @@ class ShowsAdmin(admin.ModelAdmin):
         'theatre',
         'on_sale',
         'in_future',
+        'image',
     )
 
     ordering = ('name',)
