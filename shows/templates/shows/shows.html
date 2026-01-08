@@ -3,9 +3,9 @@
 <div class="container">
     <div class="row">
         {% for show in shows %}
-        <div class="col">
-            <div class="card mt-3" style="width: 75vh;">
-            <img src="{{ show.image.url }}" class="card-img-top" alt="{{ show.name }} poster">
+        <div class="d-flex col-6">
+            <div class="card m-5" style="width: 20rem;">
+            <img src="{{ show.image.url }}" class="card-img-top " alt="{{ show.name }} poster">
                 <div class="card-body">
                     <h4 class="card-title nav-font">{{ show.name }}</h4>
                     <h5 class="card-text">Directed by {{ show.director }}, written by {{ show.writer }}</h5>

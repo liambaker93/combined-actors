@@ -14,8 +14,8 @@ class Shows(models.Model):
         verbose_name_plural = 'Shows'
 
     name = models.CharField(max_length=256, blank=False)
-    start_date = models.DateTimeField()
-    end_date = models.DateTimeField()
+    start_date = models.DateField()
+    end_date = models.DateField()
     director = models.CharField(max_length=256, blank=False)
     writer = models.CharField(max_length=256, blank=False)
     theatre = models.CharField(max_length=256, blank=False)
