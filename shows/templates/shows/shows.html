@@ -3,25 +3,34 @@
 <div class="container">
     <div class="row">
         {% for show in shows %}
-        <div class="card mt-3" style="width: 75vh;">
-        <img src="{{ show.image.url }}" class="card-img-top" alt="{{ show.name }} poster">
-            <div class="card-body">
-                <h4 class="card-title">{{ show.name }}</h4>
-                <h5 class="card-text">Directed by {{ show.director }}, written by {{ show.writer }}</h5>
-                <h6 class="card-text">From {{ show.start_date }} to {{ show.end_date }}</h6>
-                <p class="card-text">{{ show.tag_line }}</p>
-                {% if show.in_future is True %}
-                    {% if show.on_sale is True %}
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="col">
+            <div class="card mt-3" style="width: 75vh;">
+            <img src="{{ show.image.url }}" class="card-img-top" alt="{{ show.name }} poster">
+                <div class="card-body">
+                    <h4 class="card-title nav-font">{{ show.name }}</h4>
+                    <h5 class="card-text">Directed by {{ show.director }}, written by {{ show.writer }}</h5>
+                    <h6 class="card-text">From {{ show.start_date }} to {{ show.end_date }}</h6>
+                    <p class="card-text">{{ show.tag_line }}</p>
+                    {% if show.in_future is True %}
+                        {% if show.on_sale is True %}
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        {% else %}
+                        <p>Click for mailing list</p>
+                        {% endif %}
                     {% else %}
-                    <p>Click for mailing list</p>
+                    <p>View gallery</p>
                     {% endif %}
-                {% else %}
-                <p>View gallery</p>
-                {% endif %}
+                </div>
             </div>
-        </div>
         {% endfor %}
+        </div>
+        {% if request.user.is_staff %}
+        <div class="col">
+            <a href="{% url 'add_show' %}">
+                <p>Add a new show</p>
+            </a>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

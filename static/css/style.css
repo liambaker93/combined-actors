@@ -1,0 +1,13 @@
+/* CSS Colour variables, using hexes from coolors.co */
+
+:root {
+    --primary-color: #454E9E; /* ocean twilight on coolors */
+    --secondary-color: #CAA902; /* metallic gold on coolors */
+    --coffee-bean: #1F1300;
+    --lime-cream: #EDFF86;
+    --muted-teal: #88A096;
+}
+
+.nav-font {
+    color: var(--primary-color);
+}
